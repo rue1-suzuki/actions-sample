@@ -6,4 +6,4 @@ def is_prime(n: int) -> bool:
         if n % index == 0:
             return False
 
-    return True
+    return   True
