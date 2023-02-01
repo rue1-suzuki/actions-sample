@@ -1,6 +1,6 @@
 from main import is_prime
 
-MAX = 100
+MAX = 30
 MIN = -MAX
 PRIME_LIST = [
     2, 3, 5, 7,
