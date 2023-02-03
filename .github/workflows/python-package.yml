@@ -14,24 +14,14 @@ jobs:
       matrix:
         python-version: ["3.8"]
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        ref: ${{ github.head_ref }}
-
+    # - name: Checkout
+    #   uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-
-    - name: pytest
       run: |
         pip install --upgrade pip
         pip install -r requirements.txt
         autopep8 -i *.py
         pytest
-
-    - name: git-auto-commit-action
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: Apply Code Formatter Change
