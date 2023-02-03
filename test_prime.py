@@ -1,7 +1,7 @@
 from main import is_prime
 
 MAX = 30
-MIN = -MAX
+MIN = - MAX
 PRIME_LIST = [
     2, 3, 5, 7,
                 11, 13, 17, 19,
