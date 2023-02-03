@@ -8,16 +8,16 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         python-version: ["3.8"]
-
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
@@ -32,7 +32,6 @@ jobs:
         pytest
 
     - name: git-auto-commit-action
-      uses: stefanzweifel/git-auto-commit-action@v3.0.0
+      uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Apply Code Formatter Change
-        ref: ${{ github.head_ref }}
